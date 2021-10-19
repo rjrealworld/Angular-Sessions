@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { AssignmentComponent } from './assignment/assignment.component';
 import { Assignment2Component } from './assignment2/assignment2.component';
 import { CombinedAssignmentComponent } from './combined-assignment/combined-assignment.component';
+import { ExprPipe } from './expr.pipe';
+import { GenderPipe } from './gender.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CombinedAssignmentComponent } from './combined-assignment/combined-assi
     LoginComponent,
     AssignmentComponent,
     Assignment2Component,
-    CombinedAssignmentComponent
+    CombinedAssignmentComponent,
+    ExprPipe,
+    GenderPipe
   ],
   imports: [
     BrowserModule,
