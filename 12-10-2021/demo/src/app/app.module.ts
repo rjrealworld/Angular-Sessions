@@ -8,6 +8,7 @@ import { DemoComponent } from './demo/demo.component';
 import { LoginComponent } from './login/login.component';
 import { AssignmentComponent } from './assignment/assignment.component';
 import { Assignment2Component } from './assignment2/assignment2.component';
+import { CombinedAssignmentComponent } from './combined-assignment/combined-assignment.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { Assignment2Component } from './assignment2/assignment2.component';
     DemoComponent,
     LoginComponent,
     AssignmentComponent,
-    Assignment2Component
+    Assignment2Component,
+    CombinedAssignmentComponent
   ],
   imports: [
     BrowserModule,
