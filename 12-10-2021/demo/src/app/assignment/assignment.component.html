@@ -1,0 +1,11 @@
+<h1> Assignment Question 1 </h1>
+
+Employee Details are as follows : <br />
+<table>
+    <th *ngFor="let header of headers">{{header}}</th>
+    <tr *ngFor="let employee of employees">
+        <td *ngFor="let header of objectKeys(employee)">
+            {{employee[header]}}
+        </td>
+    </tr>
+</table>
