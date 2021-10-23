@@ -12,6 +12,7 @@ import { CombinedAssignmentComponent } from './combined-assignment/combined-assi
 import { ExprPipe } from './expr.pipe';
 import { GenderPipe } from './gender.pipe';
 import { CountryCodePipe } from './country-code.pipe';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CountryCodePipe } from './country-code.pipe';
     CombinedAssignmentComponent,
     ExprPipe,
     GenderPipe,
-    CountryCodePipe
+    CountryCodePipe,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
