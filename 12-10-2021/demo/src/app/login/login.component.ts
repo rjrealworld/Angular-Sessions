@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginSubmit2(loginForm: any) {
-      alert('Login form executed....');
+      console.log(loginForm);
   }
 
 }

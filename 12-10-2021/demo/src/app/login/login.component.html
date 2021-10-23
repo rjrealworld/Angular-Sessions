@@ -14,8 +14,20 @@ Enter password <input type = "password" [(ngModel)] = 'password'><br/>
     #loginForm object has 2 properties names loginId and password 
     loginForm = {loginId: 'XXXXX', password: 'XXX'} 
 -->
-<form #loginForm = "ngForm" (ngSubmit) = "loginSubmit2(loginForm)">
-    Enter login id <input type = "text" name = "loginId" ngModel = 'loginId'><br/>
-    Enter password <input type = "password" name = "password" ngModel = 'password'><br/>
+
+<!-- 
+    loginId is used in backend while #loginId is used in html
+ -->
+<form #loginForm = "ngForm" (ngSubmit) = "loginSubmit2(loginForm)" novalidate>
+    Enter login id <input type = "text" name = "loginId" ngModel #loginId = ngModel required minlength="2" maxlength="10"><br/>
+    Enter password <input type = "password" name = "password" ngModel #password = ngModel required minlength="2" maxlength="10"><br/>
     <button (click) = 'loginSubmit()'>Login</button>
 </form>
+
+<div>
+    <div *ngIf = "loginId.errors?.required">Please enter your login id</div>
+    <div *ngIf = "password.errors?.required">Please enter the password</div>
+    <div *ngIf = "loginId.errors?.minlength">Please enter minimum 2 chars in the loginId</div>
+    <div *ngIf = "password.errors?.minlength">Please enter minimum 2 chars in the password</div>
+
+</div>
