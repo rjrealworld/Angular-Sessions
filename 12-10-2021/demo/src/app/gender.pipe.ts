@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({
+@Pipe ({
   name: 'gender'
 })
-export class GenderPipe implements PipeTransform {
 
+export class GenderPipe implements PipeTransform {
   transform(value: any, gender: string): string {
     if (gender === "Male") {
       return "Mr. " + value;
@@ -13,5 +13,4 @@ export class GenderPipe implements PipeTransform {
       return "Ms. " + value;
     }
   }
-
 }

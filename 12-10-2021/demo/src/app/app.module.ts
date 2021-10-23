@@ -11,6 +11,7 @@ import { Assignment2Component } from './assignment2/assignment2.component';
 import { CombinedAssignmentComponent } from './combined-assignment/combined-assignment.component';
 import { ExprPipe } from './expr.pipe';
 import { GenderPipe } from './gender.pipe';
+import { CountryCodePipe } from './country-code.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GenderPipe } from './gender.pipe';
     Assignment2Component,
     CombinedAssignmentComponent,
     ExprPipe,
-    GenderPipe
+    GenderPipe,
+    CountryCodePipe
   ],
   imports: [
     BrowserModule,

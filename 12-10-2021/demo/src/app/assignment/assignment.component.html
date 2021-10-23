@@ -15,6 +15,8 @@ Employee Details are as follows : <br />
         <td>{{employee["gender"] | lowercase}}</td>
         <td>{{employee["salary"] | currency: 'INR'}}</td>
         <td>{{employee["doj"] | date: 'dd-MMMM-yyyy'}}</td> <!-- MM for digit of months, MMM for 3 chars of months, MMMM for complete month name -->
+        <td>{{employee["mobile"] | countryCode: employee["country"]}}</td>
+        <td>{{employee["country"]}}</td>
         <td>{{employee["loginId"]}}</td>
         <td>{{employee["password"]}}</td>
         <td>{{employee["doj"] | expr}}</td> <!-- Refer expr.pipe.ts -->
