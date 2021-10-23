@@ -1,4 +1,21 @@
-Enter login id <input type = "text" [(ngModel)] = 'loginId'><br/>
+<!-- Enter login id <input type = "text" [(ngModel)] = 'loginId'><br/>
 Enter password <input type = "password" [(ngModel)] = 'password'><br/>
+<button (click) = 'loginSubmit()'>Login</button> -->
 
-<button (click) = 'loginSubmit()'>Login</button>
+
+<!-- #loginForm is a reference to this form -->
+<!-- when button inside the form is pressed, loginForm() is fired -->
+<!-- 
+    reference and method name should be different i.e. 
+    #loginForm and loginSubmit2() 
+-->
+<!-- 
+    name attribute gives the name of the property, i.e. 
+    #loginForm object has 2 properties names loginId and password 
+    loginForm = {loginId: 'XXXXX', password: 'XXX'} 
+-->
+<form #loginForm = "ngForm" (ngSubmit) = "loginSubmit2(loginForm)">
+    Enter login id <input type = "text" name = "loginId" ngModel = 'loginId'><br/>
+    Enter password <input type = "password" name = "password" ngModel = 'password'><br/>
+    <button (click) = 'loginSubmit()'>Login</button>
+</form>
