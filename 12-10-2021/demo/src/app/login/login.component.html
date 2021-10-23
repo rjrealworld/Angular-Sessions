@@ -21,12 +21,12 @@ Enter password <input type = "password" [(ngModel)] = 'password'><br/>
 <form #loginForm = "ngForm" (ngSubmit) = "loginSubmit2(loginForm)" novalidate>
     Enter login id <input type = "text" name = "loginId" ngModel #loginId = ngModel required minlength="2" maxlength="10"><br/>
     Enter password <input type = "password" name = "password" ngModel #password = ngModel required minlength="2" maxlength="10"><br/>
-    <button (click) = 'loginSubmit()'>Login</button>
+    <button [disabled] = "!loginForm.valid">Login</button>
 </form>
 
 <div>
-    <div *ngIf = "loginId.errors?.required">Please enter your login id</div>
-    <div *ngIf = "password.errors?.required">Please enter the password</div>
+    <div *ngIf = "loginId.errors?.required && loginId.touched">Please enter your login id</div>
+    <div *ngIf = "password.errors?.required && password.touched">Please enter the password</div>
     <div *ngIf = "loginId.errors?.minlength">Please enter minimum 2 chars in the loginId</div>
     <div *ngIf = "password.errors?.minlength">Please enter minimum 2 chars in the password</div>
 
