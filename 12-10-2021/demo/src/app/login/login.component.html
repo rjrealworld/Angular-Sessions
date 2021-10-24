@@ -19,15 +19,24 @@ Enter password <input type = "password" [(ngModel)] = 'password'><br/>
     loginId is used in backend while #loginId is used in html
  -->
 <form #loginForm = "ngForm" (ngSubmit) = "loginSubmit2(loginForm)" novalidate>
-    Enter login id <input type = "text" name = "loginId" ngModel #loginId = ngModel required minlength="2" maxlength="10"><br/>
-    Enter password <input type = "password" name = "password" ngModel #password = ngModel required minlength="2" maxlength="10"><br/>
-    <button [disabled] = "!loginForm.valid">Login</button>
+    <fieldset class = "ms-5">
+        <div class="form-group col-sm-3">
+            <label for="exampleInputEmail1" class="form-label mt-4">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "email" ngModel #email = ngModel required minlength="2" maxlength="10" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group col-sm-3">
+            <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1"  name = "password" ngModel #password = ngModel required minlength="2" maxlength="10" placeholder="Password">
+        </div>
+    <button type="button" class="btn btn-primary mt-4" [disabled] = "!loginForm.valid">Login</button>
+        
+    </fieldset>
 </form>
 
 <div>
-    <div *ngIf = "loginId.errors?.required && loginId.touched">Please enter your login id</div>
+    <div *ngIf = "email.errors?.required && email.touched">Please enter your email</div>
     <div *ngIf = "password.errors?.required && password.touched">Please enter the password</div>
-    <div *ngIf = "loginId.errors?.minlength">Please enter minimum 2 chars in the loginId</div>
+    <div *ngIf = "email.errors?.minlength">Please enter minimum 2 chars in the email</div>
     <div *ngIf = "password.errors?.minlength">Please enter minimum 2 chars in the password</div>
-
 </div>
