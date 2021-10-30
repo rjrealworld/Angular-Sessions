@@ -1,6 +1,5 @@
-<div class="mx-5 mt-2">
+<div class="form-container">
     <h1> Employee Registration </h1>
-    Enter the following details : <br />
     <div class="form-group col-sm-3">
         <label for="exampleInputemployeeid" class="form-label mt-4">Employee Id</label>
         <input type="text" class="form-control" id="exampleInputemployeeid" [(ngModel)]='user.empId' name="text"
@@ -14,16 +13,17 @@
     </div>
 
     <!-- <div class="form-group col-sm-3">
-            <label for="exampleGender" class="form-label mt-4">Gender</label>
-            <select class="form-select" id="exampleGender" [(ngModel)] = 'user.gender'>
-              <option [value]="Male">Male</option>
-              <option [value]="Female">Female</option>
-            </select>
-          </div> -->
+        <label for="exampleGender" class="form-label mt-4">Gender</label>
+        <select class="form-select" id="exampleGender" [(ngModel)]='user.gender'>
+            <option [value]="Male">Male</option>
+            <option [value]="Female">Female</option>
+        </select>
+    </div> -->
 
     <div class="form-group col-sm-3">
         <label for="exampleInputemployeegender" class="form-label mt-4">Gender</label>
-        <input type="text" class="form-control" id="exampleInputemployeegender" [(ngModel)]='user.gender' placeholder="Male/Female">
+        <input type="text" class="form-control" id="exampleInputemployeegender" [(ngModel)]='user.gender'
+            placeholder="Male/Female">
     </div>
 
     <div class="form-group col-sm-3">
@@ -49,5 +49,8 @@
         <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]='user.password'
             name="password" required minlength="2" maxlength="10" placeholder="Password">
     </div>
-    <button (click)='submit()'>Submit</button>
+
+    <div class="d-grid gap-2 mt-4">
+        <button class="btn btn-lg btn-primary" type="button" (click)='submit()'>Submit</button>
+    </div>
 </div>
