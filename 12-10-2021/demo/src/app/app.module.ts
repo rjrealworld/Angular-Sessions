@@ -12,6 +12,7 @@ import { ExprPipe } from './expr.pipe';
 import { GenderPipe } from './gender.pipe';
 import { CountryCodePipe } from './country-code.pipe';
 import { HeaderComponent } from './header/header.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from './header/header.component';
     ExprPipe,
     GenderPipe,
     CountryCodePipe,
-    HeaderComponent
+    HeaderComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
