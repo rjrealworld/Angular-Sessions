@@ -1,34 +1,53 @@
-
-
 <div class="mx-5 mt-2">
     <h1> Employee Registration </h1>
     Enter the following details : <br />
-        <div class="form-group col-sm-3">
-            <label for="exampleInputemployeeid" class="form-label mt-4">Employee Id</label>
-            <input type="text" class="form-control" id="exampleInputemployeeid" [(ngModel)] = 'user.empId' name = "text" required placeholder="Employee Id">
-        </div>
-        <div class="form-group col-sm-3">
-            <label for="exampleInputemployeename" class="form-label mt-4">Employee Name</label>
-            <input type="text" class="form-control" id="exampleInputemployeename" [(ngModel)] = 'user.empName' name = "text" required placeholder="Employee Name">
-        </div>
-        <!-- <div class="form-group col-sm-3">
+    <div class="form-group col-sm-3">
+        <label for="exampleInputemployeeid" class="form-label mt-4">Employee Id</label>
+        <input type="text" class="form-control" id="exampleInputemployeeid" [(ngModel)]='user.empId' name="text"
+            required placeholder="Employee Id">
+    </div>
+
+    <div class="form-group col-sm-3">
+        <label for="exampleInputemployeename" class="form-label mt-4">Employee Name</label>
+        <input type="text" class="form-control" id="exampleInputemployeename" [(ngModel)]='user.empName' name="text"
+            required placeholder="Employee Name">
+    </div>
+
+    <!-- <div class="form-group col-sm-3">
             <label for="exampleGender" class="form-label mt-4">Gender</label>
             <select class="form-select" id="exampleGender" [(ngModel)] = 'user.gender'>
-              <option [value]="user.gender">Male</option>
-              <option [value]="user.gender">Female</option>
+              <option [value]="Male">Male</option>
+              <option [value]="Female">Female</option>
             </select>
           </div> -->
-        Gender <input type = "text" [(ngModel)] = 'user.gender' /><br/>
-        Salary <input type = "text" [(ngModel)] = 'user.salary'><br/>
-        Date of joining <input type = "text" [(ngModel)] = 'user.doj'><br/>
-        <div class="form-group col-sm-3">
-            <label for="exampleInputloginid1" class="form-label mt-4">Login Id</label>
-            <input type="text" class="form-control" id="exampleInputloginid1" [(ngModel)] = 'user.loginId' name = "text" required placeholder="Login Id">
-        </div>
-        <div class="form-group col-sm-3">
-            <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)] = 'user.password' name = "password" required minlength="2" maxlength="10" placeholder="Password">
-        </div>
-    <button (click) = 'submit()'>Submit</button>
-</div>
 
+    <div class="form-group col-sm-3">
+        <label for="exampleInputemployeegender" class="form-label mt-4">Gender</label>
+        <input type="text" class="form-control" id="exampleInputemployeegender" [(ngModel)]='user.gender' placeholder="Male/Female">
+    </div>
+
+    <div class="form-group col-sm-3">
+        <label for="exampleInputemployeesalary" class="form-label mt-4">Salary</label>
+        <input type="number" class="form-control" id="exampleInputemployeesalary" [(ngModel)]='user.salary'
+            placeholder="00">
+    </div>
+
+    <div class="form-group col-sm-3">
+        <label for="exampleInputemployeedoj" class="form-label mt-4">Date of Joining</label>
+        <input type="date" class="form-control" id="exampleInputemployeedoj" [(ngModel)]='user.doj'
+            placeholder="MM/DD/YYYY">
+    </div>
+
+    <div class="form-group col-sm-3">
+        <label for="exampleInputloginid1" class="form-label mt-4">Login Id</label>
+        <input type="text" class="form-control" id="exampleInputloginid1" [(ngModel)]='user.loginId' name="text"
+            required placeholder="Login Id">
+    </div>
+
+    <div class="form-group col-sm-3">
+        <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]='user.password'
+            name="password" required minlength="2" maxlength="10" placeholder="Password">
+    </div>
+    <button (click)='submit()'>Submit</button>
+</div>
