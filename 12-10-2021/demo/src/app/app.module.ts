@@ -13,6 +13,16 @@ import { GenderPipe } from './gender.pipe';
 import { CountryCodePipe } from './country-code.pipe';
 import { HeaderComponent } from './header/header.component';
 import { ProductComponent } from './product/product.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoot: Routes = [
+  { path: '', component: DemoComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: Assignment2Component },
+  { path: 'employees', component: AssignmentComponent },
+  { path: 'product', component: ProductComponent },
+  // { path: '**', component: LoginComponent }
+];
 
 @NgModule({
   declarations: [
@@ -29,8 +39,9 @@ import { ProductComponent } from './product/product.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    RouterModule.forRoot(appRoot)
   ],
   providers: [],
   bootstrap: [AppComponent]
