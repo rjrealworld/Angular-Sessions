@@ -14,14 +14,19 @@ import { CountryCodePipe } from './country-code.pipe';
 import { HeaderComponent } from './header/header.component';
 import { ProductComponent } from './product/product.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HrPageComponent } from './hr-page/hr-page.component';
 
 const appRoot: Routes = [
   { path: '', component: DemoComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: Assignment2Component },
+  // { path: 'register', component: Assignment2Component },
   { path: 'employees', component: AssignmentComponent },
   { path: 'product', component: ProductComponent },
-  // { path: '**', component: LoginComponent }
+  {
+    path: 'hrpage',
+    children: [{ path: '', component: HrPageComponent }, 
+    { path: 'register', component: Assignment2Component }]
+  }
 ];
 
 @NgModule({
@@ -35,7 +40,8 @@ const appRoot: Routes = [
     GenderPipe,
     CountryCodePipe,
     HeaderComponent,
-    ProductComponent
+    ProductComponent,
+    HrPageComponent
   ],
   imports: [
     BrowserModule,
