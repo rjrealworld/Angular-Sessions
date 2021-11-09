@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthGuard } from '../auth.guard';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   password: string;
   employees: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authGuard: AuthGuard) {
     this.loginId = '';
     this.password = '';
     this.employees = [
@@ -43,6 +44,7 @@ export class LoginComponent implements OnInit {
     if (loginForm.email === 'HR' && loginForm.password === 'HR') {
       // alert('Login successful');
       this.router.navigate(['hrpage']);
+      this.authGuard.isLoggedIn = true;
 
     }
     else {

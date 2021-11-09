@@ -16,19 +16,6 @@ import { ProductComponent } from './product/product.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HrPageComponent } from './hr-page/hr-page.component';
 
-const appRoot: Routes = [
-  { path: '', component: DemoComponent },
-  { path: 'login', component: LoginComponent },
-  // { path: 'register', component: Assignment2Component },
-  { path: 'employees', component: AssignmentComponent },
-  { path: 'product', component: ProductComponent },
-  {
-    path: 'hrpage',
-    children: [{ path: '', component: HrPageComponent }, 
-    { path: 'register', component: Assignment2Component }]
-  }
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +34,7 @@ const appRoot: Routes = [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoot)
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
