@@ -44,13 +44,13 @@ export class LoginComponent implements OnInit {
     if (loginForm.email === 'HR' && loginForm.password === 'HR') {
       // alert('Login successful');
       this.router.navigate(['hrpage']);
-      this.authGuard.isLoggedIn = true;
-
+      this.authGuard.setLoggedIn();
     }
     else {
       this.employees.forEach((employee: any) => {
         if ((loginForm.email === employee.email) && (loginForm.password === employee.password)) {
           alert('Welcome to employee page....');
+          this.authGuard.setLoggedIn();
         }
       });
     }
