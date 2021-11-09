@@ -8,26 +8,26 @@ import { Observable } from 'rxjs';
 export class AuthGuard implements CanActivate {
   private isLoggedIn: any;
 
-  constructor() { 
+  constructor() {
     this.isLoggedIn = false;
   }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.isLoggedIn;
+    return this.getLoggedIn();
   }
 
   public setLoggedIn() {
     this.isLoggedIn = true;
   }
 
+  public setLoggedOut() {
+    this.isLoggedIn = false;
+  }
+
   public getLoggedIn() {
     return this.isLoggedIn;
   }
 
-  public setLoggedOut() {
-    this.isLoggedIn = false;
-  }
-  
 }
