@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-assignment2',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Assignment2Component implements OnInit {
   user: any;
-  constructor() {
+  constructor(private service: EmployeeService) {
     this.user = {
       empId: "",
       empName: "",
@@ -20,6 +21,7 @@ export class Assignment2Component implements OnInit {
   }
 
   ngOnInit(): void {
+    this.service.getCountries();
   }
 
   submit(): void {
