@@ -11,7 +11,7 @@ import { ProductComponent } from './product/product.component';
 const routes: Routes = [
   { path: '', component: DemoComponent },
   { path: 'login', component: LoginComponent },
-  // { path: 'register', component: Assignment2Component },
+  { path: 'register', component: Assignment2Component },
   { path: 'employees', canActivate: [AuthGuard], component: AssignmentComponent },
   { path: 'product', canActivate: [AuthGuard], component: ProductComponent },
   {

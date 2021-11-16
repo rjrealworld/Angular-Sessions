@@ -8,6 +8,7 @@ import { EmployeeService } from '../employee.service';
 })
 export class Assignment2Component implements OnInit {
   user: any;
+  a: any;
   constructor(private service: EmployeeService) {
     this.user = {
       empId: "",
@@ -22,6 +23,8 @@ export class Assignment2Component implements OnInit {
 
   ngOnInit(): void {
     this.service.getCountries();
+    // this.a = this.service.getCountries();
+    // console.log(this.a);
   }
 
   submit(): void {
